@@ -17,6 +17,11 @@ body {
   gap: 20px;
   padding: 20px;
 }
+row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 .card {
   flex: 1 1 300px;
   background: #fff;
@@ -54,4 +59,8 @@ body {
   color: #444;
   border-left: 4px solid #0072ff;
   padding-left: 10px;
+}
+
+.col-3 {
+  flex: 1 1 300px;
 }

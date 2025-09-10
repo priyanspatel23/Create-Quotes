@@ -5,7 +5,7 @@
 // Upload on Github and Send Repo link.
 
 
-const Data = [
+let Data = [
 
  {
 
@@ -358,21 +358,24 @@ const Data = [
  }
 ];
 
-const container = document.getElementById("quotesContainer");
 
-Data.forEach(item => {
-  const card = document.createElement("div");
-  card.classList.add("card");
+console.log(Data);
 
-  card.innerHTML = `
-    <img src="${item.imgurl}" alt="${item.author}">
-    <div class="card-content">
-      <h2>${item.author}</h2>
-      <p><b>Birthplace:</b> ${item.birthPlace}</p>
-      <p class="quote">"${item.quote}"</p>
-    </div>
-  `;
+let str = '';
 
-  container.appendChild(card);
+Data.forEach(function(item) {
+    str += `
+        <div class="col-3">
+            <div class="card">
+                <img src="${item.imgurl}" alt="${item.author}">
+                <div class="card-content">
+                    <h2>${item.author}</h2>
+                    <p><b>Birthplace:</b> ${item.birthPlace}</p>
+                    <p class="quote">"${item.quote}"</p>
+                </div>
+            </div>
+        </div>
+    `;
 });
 
+document.getElementById('quotesContainer').innerHTML = str;
